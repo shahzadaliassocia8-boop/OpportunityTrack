@@ -1,0 +1,10 @@
+name = "opportunitytrack"
+compatibility_date = "2026-09-30"
+pages_build_output_dir = "."
+
+# Optional if you prefer Wrangler instead of the Cloudflare dashboard.
+# Create a D1 database first, then paste its real ID below.
+[[d1_databases]]
+binding = "DB"
+database_name = "opportunitytrack-db"
+database_id = "PASTE_YOUR_D1_DATABASE_ID_HERE"
