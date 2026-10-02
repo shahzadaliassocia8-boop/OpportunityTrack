@@ -1,9 +1,0 @@
-name = "opportunitytrack-source-scheduler"
-main = "worker.js"
-compatibility_date = "2026-09-30"
-
-[vars]
-SITE_URL = "https://YOUR-LIVE-DOMAIN.com"
-
-[triggers]
-crons = ["17 */6 * * *"]
