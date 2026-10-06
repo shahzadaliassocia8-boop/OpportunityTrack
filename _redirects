@@ -1,2 +1,0 @@
-# Cloudflare Pages serves HTML at clean extensionless URLs automatically.
-# Do not rewrite /page to /page.html here; that causes redirect loops.
