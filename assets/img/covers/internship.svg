@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="OpportunityTrack Internships cover">
+<defs>
+  <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#16697a"/><stop offset="1" stop-color="#82c0cc"/></linearGradient>
+  <radialGradient id="r" cx="75%" cy="20%" r="60%"><stop offset="0" stop-color="#fff" stop-opacity=".28"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1200" height="675" rx="42" fill="url(#g)"/>
+<rect width="1200" height="675" rx="42" fill="url(#r)"/>
+<g fill="none" stroke="#fff" stroke-opacity=".22" stroke-width="2">
+ <circle cx="930" cy="175" r="120"/><circle cx="930" cy="175" r="78"/><circle cx="930" cy="175" r="38"/>
+ <path d="M60 540 C300 420 420 650 660 515 S1020 390 1160 470"/>
+ <path d="M80 585 C350 480 470 650 760 545 S1020 460 1150 520"/>
+</g>
+<g fill="#fff" opacity=".12"><circle cx="1040" cy="500" r="135"/><circle cx="190" cy="120" r="86"/></g>
+<text x="80" y="160" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="700">OpportunityTrack</text>
+<g transform="translate(82 265)" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"><rect x="0" y="40" width="240" height="150" rx="22"/><path d="M80 40V15h80v25M0 98c64 32 176 32 240 0M100 102h40"/></g>
+<text x="380" y="360" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="76" font-weight="800">Internships</text>
+<text x="380" y="430" fill="#fff" fill-opacity=".86" font-family="Arial, Helvetica, sans-serif" font-size="30">Clear details • deadlines • practical guidance</text>
+</svg>
