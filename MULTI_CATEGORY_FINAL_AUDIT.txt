@@ -1,0 +1,45 @@
+OPPORTUNITYTRACK - ONE LINK / MULTI-CATEGORY SOURCE FINAL AUDIT
+==============================================================
+Build date: 2026-10-05
+
+REQUESTED WORKFLOW
+- One official source URL can now monitor multiple content types at once.
+- Admin can tick any combination of: Scholarship, Admission, Internship, Fellowship, Job, Scheme, Update.
+- The same link does not need to be added again for another category.
+- “Save & Check Now” saves the source and immediately scans it.
+- Future scheduled/automatic checks keep the same selected content types.
+- Source table displays all selected types as badges.
+- Duplicate source URLs are blocked; Admin is instructed to edit the existing source instead.
+- If content types are removed from a source, obsolete unreviewed pending items for those removed types are cleared.
+
+DETECTION BEHAVIOR
+- Scanner classifies each detected item independently.
+- Only items matching one of the selected content types are kept.
+- Specific types (Admission, Internship, Fellowship, Job) are prioritized before broad “funding/programme” wording.
+- Existing single-category sources migrate automatically to a one-item selected-category list.
+- Pending Review / Import & Auto-Fill / Publish workflow is retained for AdSense-safe human review.
+
+COMPATIBILITY
+- Existing D1 database is supported through safe forward migration.
+- Fresh database schema includes allowed_categories.
+- Existing DB binding name remains DB.
+- No new external service or API key is required.
+
+STATIC / CODE AUDIT
+- All JavaScript syntax checks: PASS
+- Fresh SQLite schema parse: PASS
+- Existing-source migration SQL test: PASS
+- Multi-category source scanner synthetic test: PASS
+  * Selected: Scholarship + Fellowship
+  * Detected/kept: Scholarship + Fellowship
+  * Correctly excluded: Internship + Job
+- Internal HTML links: PASS
+- Duplicate HTML IDs: PASS
+- Redirect self-loop check: PASS
+- Dynamic sitemap.xml and robots.txt functions present: PASS
+- Multi-category Admin UI controls present for all 7 content types: PASS
+- Total packaged files: 84 including this audit report
+
+IMPORTANT
+- External opportunities still enter Pending Review first; they are not blindly auto-published.
+- This preserves editorial control and reduces incorrect/copy-paste content risk for an AdSense-focused site.
