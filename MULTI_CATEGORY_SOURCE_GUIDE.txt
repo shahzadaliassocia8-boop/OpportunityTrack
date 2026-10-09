@@ -1,0 +1,11 @@
+OpportunityTrack - One Link, Multiple Content Types
+
+1. Open Admin Panel > Official Sources.
+2. Enter the official website/feed URL once.
+3. Under “Content types to monitor”, tick Scholarship, Admission, Internship, Fellowship, Job, Scheme and/or Update.
+4. Click “Save & Check Now”.
+5. OpportunityTrack scans that same link and only keeps items matching the selected types.
+6. Future automatic checks keep using the same selected content types, so you do not need to add the link again.
+7. Matching items appear in Pending Review, where Import & Auto-Fill prepares the draft before publishing.
+
+Existing sources are migrated automatically: their old single category becomes their first selected content type.

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="noindex,nofollow" name="robots"/>
+<title>Admin Panel | OpportunityTrack</title>
+<meta content="#173b59" name="theme-color"/>
+<link href="/assets/img/logo.svg" rel="icon"/>
+<link href="/assets/css/admin.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="admin-shell" data-admin-shell="">
+<aside class="admin-sidebar" data-sidebar="">
+<a class="admin-brand" href="/"><span class="mark">O</span><span>OpportunityTrack</span></a>
+<nav aria-label="Admin navigation" class="admin-nav">
+<button class="active" data-view="dashboard">Dashboard</button>
+<button data-filter="all">All Content</button>
+<button data-filter="Scholarship">Scholarships</button>
+<button data-filter="Admission">Admissions</button>
+<button data-filter="Internship">Internships</button>
+<button data-filter="Fellowship">Fellowships</button>
+<button data-filter="Job">Jobs</button>
+<button data-filter="Scheme">Schemes</button>
+<button data-filter="Update">Updates</button>
+<div class="nav-divider"></div>
+<button data-view="sources">Official Sources</button>
+<button data-view="discoveries">Pending Review <span class="nav-count" data-pending-nav="" hidden="">0</span></button>
+<button class="super-only" data-view="users">Admin Users</button>
+</nav>
+<div class="admin-sidebar-footer">
+<div class="admin-user" data-user-summary="">Loading account…</div>
+<button class="secondary-btn full-btn" data-logout="">Log out</button>
+</div>
+</aside>
+<main class="admin-main">
+<header class="admin-topbar">
+<div style="display:flex;align-items:center;gap:10px">
+<button class="ghost-btn mobile-side-btn" data-sidebar-toggle="">Menu</button>
+<div>
+<h1 data-page-title="">Dashboard</h1>
+<div class="top-sub" data-page-subtitle="">Manage OpportunityTrack content</div>
+</div>
+</div>
+<div class="top-actions">
+<a class="secondary-btn" href="/" target="_blank">View site</a>
+<button class="primary-btn" data-new="">+ Add New</button>
+</div>
+</header>
+<div class="admin-content">
+<div class="message" data-global-message=""></div>
+<section class="admin-view active" data-view-panel="dashboard">
+<div class="admin-grid">
+<div class="stat-card"><span>Published</span><strong data-stat="published">0</strong></div>
+<div class="stat-card"><span>Drafts</span><strong data-stat="draft">0</strong></div>
+<div class="stat-card"><span>Featured</span><strong data-stat="featured">0</strong></div>
+<div class="stat-card"><span>Pending imports</span><strong data-stat="pending">0</strong></div>
+<div class="stat-card"><span>Total content</span><strong data-stat="total">0</strong></div>
+</div>
+<div class="notice-card policy-safe">
+<strong>AdSense-safe workflow:</strong> automatic monitoring only detects new items. Nothing from an external website is published automatically. Review each official source, write your own useful summary, then publish it.
+        </div>
+<div class="panel">
+<div class="panel-head"><h2>Recently updated</h2><button class="secondary-btn" data-show-all="">View all</button></div>
+<div class="table-wrap"><table class="admin-table"><thead><tr><th>Title</th><th>Content types</th><th>Status</th><th>Published</th><th>Actions</th></tr></thead><tbody data-recent-body=""></tbody></table></div>
+</div>
+</section>
+<section class="admin-view" data-view-panel="list">
+<div class="panel" style="margin-top:0">
+<div class="panel-head"><h2 data-list-title="">All Content</h2><div class="toolbar"><input data-list-search="" placeholder="Search title, country, organization" type="search"/><select data-list-status=""><option value="">All status</option><option value="published">Published</option><option value="draft">Draft</option></select></div></div>
+<div class="table-wrap"><table class="admin-table"><thead><tr><th>Title</th><th>Category</th><th>Country</th><th>Deadline</th><th>Status</th><th>Actions</th></tr></thead><tbody data-list-body=""></tbody></table></div>
+</div>
+</section>
+<section class="admin-view" data-view-panel="editor">
+<div class="editor-layout">
+<div class="panel" style="margin-top:0">
+<div class="panel-head"><h2 data-editor-title="">Add New Opportunity</h2><p class="muted" style="margin:.35rem 0 0">Imported opportunities are auto-filled from the official source. Check the facts once, then use <strong>Publish to Site</strong>.</p><button class="secondary-btn" data-cancel-editor="">Back</button></div>
+<div class="panel-body">
+<form data-editor-form=""><div class="editor-quality-warning" data-editor-quality-warning="" hidden=""></div>
+<input name="id" type="hidden"/>
+<div class="form-grid">
+<div class="field full"><label>Title *</label><input maxlength="220" name="title" required=""/></div>
+<div class="field"><label>Category *</label><select name="category" required=""><option>Scholarship</option><option>Admission</option><option>Internship</option><option>Fellowship</option><option>Job</option><option>Scheme</option><option>Update</option></select></div>
+<div class="field"><label>Status</label><select name="status"><option value="published">Published</option><option value="draft">Draft</option></select></div>
+<div class="field"><label>Organization / University</label><input name="organization"/></div>
+<div class="field"><label>Country</label><input name="country"/></div>
+<div class="field"><label>City</label><input name="city"/></div>
+<div class="field"><label>Funding / Type</label><input name="funding" placeholder="Fully funded, Paid, Tuition waiver..."/></div>
+<div class="field"><label>Degree / Applicant level</label><input name="degree_level" placeholder="Bachelor's, Master's, PhD..."/></div>
+<div class="field"><label>Deadline</label><input name="deadline" placeholder="e.g. 15 March 2027"/></div>
+<div class="field"><label>Published date</label><input name="published_date" type="date"/></div>
+<div class="field full"><label>Short description *</label><textarea maxlength="1800" name="short_description" required=""></textarea><small>Write your own useful summary. Do not paste or lightly rewrite the official page.</small></div>
+<div class="field full"><label>Eligibility</label><textarea name="eligibility" placeholder="Who can apply? Add clear original wording."></textarea></div>
+<div class="field full"><label>Full details</label><textarea name="full_details" placeholder="Add practical, original guidance. Separate paragraphs with a blank line."></textarea></div>
+<div class="field full auto-fill-info"><strong>Automatic media &amp; application detection</strong><small>When an item is imported from Pending Review, OpportunityTrack automatically looks for the official page image and the real application portal/form. You normally do not need to fill these links yourself. If an image is unavailable, a unique OpportunityTrack poster is generated automatically for the post.</small></div>
+<div class="field full"><details class="advanced-overrides"><summary>Advanced overrides (only if auto-detection needs correction)</summary><div class="advanced-grid">
+<div class="field full"><label>Cover image URL override</label><input name="image_url" placeholder="Auto-filled when available" type="url"/><small>Optional manual override. Use only an HTTPS image you are allowed to display.</small></div>
+<div class="field full"><label>Direct application link override</label><input name="application_link" placeholder="Auto-filled when a direct application route is verified" type="url"/><small>Must be the actual application portal/form. The official information article is never used as the Apply button fallback.</small></div>
+<div class="field full"><label>Official source link</label><input name="official_source" placeholder="https://official-provider..." type="url"/><small>Used for verification and transparency. It is not substituted for the direct Apply button.</small></div>
+</div></details></div>
+<div class="field full"><label>Tags</label><input name="tags" placeholder="AI, Research, International, Fully Funded"/></div>
+<div class="field full"><label class="check-row"><input name="featured" style="width:auto" type="checkbox"/> Show as Featured opportunity</label></div>
+</div>
+<div class="editor-actions"><button class="primary-btn" data-publish-content="" type="submit">Publish to Site</button><button class="secondary-btn" data-save-draft="" type="button">Save as Draft</button><button class="danger-btn" data-delete-current="" hidden="" type="button">Delete</button></div>
+</form>
+</div>
+</div>
+<aside class="preview-card">
+<div class="preview-label">Live format preview</div>
+<div class="pcard"><div class="preview-cover"><img alt="" data-preview-image="" loading="lazy"/></div><span class="badge featured" data-preview-category="">Scholarship</span><h3 data-preview-title="">Your title will appear here</h3><p data-preview-desc="">Short description preview.</p><div class="preview-meta" data-preview-meta="">Country · Deadline</div></div>
+<p class="preview-help">The public site uses a fixed template, so editing content here cannot change the card or detail-page design.</p>
+</aside>
+</div>
+</section>
+<section class="admin-view" data-view-panel="sources">
+<div class="source-layout">
+<div class="panel" style="margin-top:0">
+<div class="panel-head"><div><h2>Official Sources</h2><p class="panel-kicker">Connect official scholarship, university, fellowship or careers pages.</p></div><button class="primary-btn" data-check-all-sources="">Check all now</button></div>
+<div class="panel-body">
+<div class="notice-card compact"><strong>Automatic detection:</strong> Auto mode first looks for RSS/Atom/JSON feeds and falls back to finding opportunity links on the official page. Detected items go to <b>Pending Review</b>, not directly to the public site.</div>
+<div class="table-wrap source-table-wrap"><table class="admin-table"><thead><tr><th>Source</th><th>Type</th><th>Category</th><th>Last check</th><th>Pending</th><th>Status</th><th>Actions</th></tr></thead><tbody data-sources-body=""></tbody></table></div>
+</div>
+</div>
+<aside class="panel source-form-panel" style="margin-top:0">
+<div class="panel-head"><h2 data-source-form-title="">Add Official Source</h2></div>
+<div class="panel-body">
+<form data-source-form="">
+<input name="id" type="hidden"/>
+<div class="field"><label>Source name *</label><input name="name" placeholder="e.g. DAAD Scholarships" required=""/></div>
+<div class="field"><label>Official website / feed URL *</label><input name="url" placeholder="https://official-site.org/scholarships" required="" type="url"/></div>
+<div class="field"><label>Detection type</label><select name="source_type"><option value="auto">Auto detect (recommended)</option><option value="rss">RSS / Atom feed</option><option value="html">Official webpage links</option></select></div>
+<div class="field source-category-field"><label>Content types to monitor *</label><small>Select every type you want this one link to provide. You only add the official link once.</small><div class="source-category-grid" data-source-categories>
+<label class="source-category-option"><input type="checkbox" name="allowed_category" value="Scholarship" checked><span>🎓 Scholarship</span></label>
+<label class="source-category-option"><input type="checkbox" name="allowed_category" value="Admission"><span>🏫 Admission</span></label>
+<label class="source-category-option"><input type="checkbox" name="allowed_category" value="Internship"><span>💼 Internship</span></label>
+<label class="source-category-option"><input type="checkbox" name="allowed_category" value="Fellowship"><span>🌍 Fellowship</span></label>
+<label class="source-category-option"><input type="checkbox" name="allowed_category" value="Job"><span>🧭 Job</span></label>
+<label class="source-category-option"><input type="checkbox" name="allowed_category" value="Scheme"><span>📌 Scheme</span></label>
+<label class="source-category-option"><input type="checkbox" name="allowed_category" value="Update"><span>📰 Update</span></label>
+</div><div class="source-category-actions"><button class="mini-btn" type="button" data-source-select-all>Select all</button><button class="mini-btn" type="button" data-source-clear-categories>Clear</button></div><input type="hidden" name="default_category" value="Scholarship"></div>
+<div class="field"><label>Check every</label><select name="check_interval_hours"><option value="6">6 hours</option><option selected="" value="12">12 hours</option><option value="24">24 hours</option><option value="48">48 hours</option><option value="72">72 hours</option></select></div>
+<label class="check-row"><input checked="" name="active" style="width:auto" type="checkbox"/> Automatic checks enabled</label>
+<div class="source-form-actions"><button class="primary-btn" type="submit">Save Source</button><button class="secondary-btn" type="button" data-source-save-check>Save & Check Now</button><button class="secondary-btn" data-source-reset="" type="button">Clear</button></div>
+</form>
+</div>
+</aside>
+</div>
+</section>
+<section class="admin-view" data-view-panel="discoveries">
+<div class="panel" style="margin-top:0">
+<div class="panel-head"><div><h2>Pending Review</h2><p class="panel-kicker">New items detected from official sources. Review the source before publishing.</p></div><select data-discovery-status=""><option value="pending">Pending</option><option value="imported">Imported</option><option value="ignored">Ignored</option></select></div>
+<div class="panel-body">
+<div class="notice-card policy-safe compact"><strong>Important:</strong> “Import & Auto-Fill” creates a private draft and attempts to identify the direct application link. It does not copy the official article and it does not publish anything. Open the source, verify facts, then write original application guidance.</div>
+<div class="discovery-grid" data-discoveries-grid=""></div>
+</div>
+</div>
+</section>
+<section class="admin-view" data-view-panel="users">
+<div class="panel" style="margin-top:0"><div class="panel-head"><h2>Admin Users</h2><button class="primary-btn" data-add-admin="">+ Add Admin</button></div><div class="panel-body"><div class="message" data-users-message=""></div><div data-create-admin-wrap="" hidden=""><form class="form-grid" data-create-admin-form=""><div class="field"><label>Username</label><input minlength="4" name="username" required=""/></div><div class="field"><label>Email</label><input name="email" required="" type="email"/></div><div class="field"><label>Temporary password</label><input minlength="10" name="password" required="" type="password"/></div><div class="field" style="align-self:end"><button class="primary-btn" type="submit">Create Admin</button></div></form><hr class="soft-rule"/></div><div class="table-wrap"><table class="admin-table"><thead><tr><th>Username</th><th>Email</th><th>Role</th><th>Status</th><th>Actions</th></tr></thead><tbody data-users-body=""></tbody></table></div></div></div>
+<div class="panel"><div class="panel-head"><h2>Password reset requests</h2></div><div class="table-wrap"><table class="admin-table"><thead><tr><th>Admin</th><th>Requested</th><th>Action</th></tr></thead><tbody data-resets-body=""></tbody></table></div></div>
+</section>
+</div>
+</main>
+</div>
+<script defer="" src="/assets/js/admin.js"></script>
+</body>
+</html>
