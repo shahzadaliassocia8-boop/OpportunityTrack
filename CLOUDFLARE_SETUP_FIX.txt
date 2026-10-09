@@ -1,0 +1,10 @@
+OpportunityTrack Cloudflare setup fix
+
+Issue fixed: the previous password hashing configuration used 210,000 PBKDF2 iterations. Cloudflare Workers rejects a single PBKDF2 request above 100,000 iterations, which caused Error 1101 during Super Admin creation.
+
+Fixed in this build:
+- PBKDF2 iterations set to 100,000 (Cloudflare Workers ceiling)
+- Setup endpoint now catches server errors and returns JSON instead of a generic Cloudflare HTML error page
+- Setup page displays clearer request errors
+
+After uploading/pushing this build, wait for the new Cloudflare Pages deployment to complete, then revisit /admin-setup and create the Super Admin. The existing D1 database and DB binding can stay as they are.

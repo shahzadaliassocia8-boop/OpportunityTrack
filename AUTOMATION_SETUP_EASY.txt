@@ -1,0 +1,46 @@
+OPPORTUNITYTRACK - EASY AUTOMATIC UPDATE SETUP
+============================================
+
+WHAT IS ALREADY AUTOMATIC WITHOUT EXTRA SETUP?
+- The public site sends a lightweight heartbeat when someone visits.
+- If an official source is due for checking, the server checks it in the background.
+- New links go to Admin Panel > Pending Review.
+- Nothing external is published automatically.
+
+HOW TO ADD A SOURCE
+1. Log in to Admin Panel.
+2. Open "Official Sources".
+3. Add the OFFICIAL page or RSS/Atom feed URL.
+4. Keep "Auto detect" selected.
+5. Choose the correct default category.
+6. Choose how often it should be checked.
+7. Save Source.
+8. Press "Check now" once to test it.
+
+HOW TO REVIEW NEW ITEMS
+1. Open Admin Panel > Pending Review.
+2. Open the official source link and verify the details.
+3. Press "Import & Auto-Fill".
+4. Review the auto-filled fields against the official source. Correct any missing or unclear facts before publishing.
+5. Publish only after reviewing it.
+
+WHY IS THERE NO DIRECT AUTO-PUBLISH?
+Google Publisher Policies warn against automatically generated/replicated content without manual review. OpportunityTrack therefore automates discovery, not publication. This protects content quality and reduces AdSense risk.
+
+OPTIONAL: GUARANTEED 24/7 CHECKS EVEN WITH ZERO VISITORS
+The folder automation-worker/ contains a tiny Cloudflare Worker.
+It calls the site's rate-limited heartbeat every 6 hours.
+
+One-time setup:
+1. In automation-worker/wrangler.toml.example replace YOUR-LIVE-DOMAIN.com with your real live domain.
+2. Rename the file to wrangler.toml.
+3. From that folder run: npx wrangler deploy
+4. Cloudflare will create the Worker and its Cron Trigger.
+
+The scheduler does NOT need access to your database and does NOT need your Admin password.
+It only calls the site's safe, rate-limited background-check endpoint.
+
+IMPORTANT
+- Only add official/trusted sources you are allowed to access.
+- Some JavaScript-heavy websites may not expose useful links to a server-side fetch. If one source fails, use its official RSS/Atom/JSON feed if available.
+- Automatic discovery is intentionally a review queue, not a copying system.

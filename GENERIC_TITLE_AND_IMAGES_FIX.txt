@@ -1,0 +1,13 @@
+OpportunityTrack final quality fix
+
+1. Generic navigation records such as Homepage, Home, Funding Options, Read More,
+   Overview, Search, etc. are blocked at source detection, import, publishing,
+   public API and detail-page levels.
+2. Existing D1 records with those titles are automatically moved to Draft and
+   their source-review items are marked Ignored the next time the schema check runs.
+3. Pending Review import now refuses a generic link before creating a post.
+4. Publish to Site is disabled in the Admin editor while the title is generic.
+5. Category pages now include professional built-in original illustrations.
+6. Opportunity cards/detail pages still use a built-in category image when no
+   licensed custom image URL is provided.
+7. Existing D1 database and DB binding can be kept; no reset is required.
