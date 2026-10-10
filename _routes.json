@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "include": [
+    "/api/*",
+    "/opportunities/*",
+    "/poster/*",
+    "/sitemap.xml",
+    "/robots.txt"
+  ],
+  "exclude": [
+    "/assets/*"
+  ]
+}
